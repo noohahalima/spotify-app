@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container-fluid spotify-app">
+  <div class="row">
+    <section class="col-xs-1 side-nav clean-paddings">
+      <nav class="navbar">
+         <ul class="nav">
+           <li class="brand-icon"><a href="#"><span class="fa fa-spotify"></span></a></li>
+           <li><a href="#"><span class="fa fa-search"></span>Search</a></li>
+           <li><a href="#"><span class="fa fa-headphones"></span>Browse</a></li>
+           <li><a href="#"><span class="fa fa-feed"></span>Radio</a></li>
+           <li class="active"><a href="#"><span class="fa fa-bars fa-rotate-90"></span>Your Music</a></li>
+           <li><a href="#"><span class="fa fa-users"></span>Follow</a></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="col-xs-11 clean-paddings">
+      <nav>
+        <div class="top-nav container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Playlists</a></li>
+            <li class="active"><a href="#">Songs</a></li>
+            <li><a href="#">Albums</a></li> 
+            <li><a href="#">Artists</a></li> 
+          </ul>
+        </div>
+      </nav>
+      <table class="table table-songs">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th><span class="fa fa-calendar-o"></span></th>
+            <th><span class="fa fa-clock-o"></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr tabindex="1">
+            <td>
+              <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+                <span class="fa fa-play fa-stack-1x"></span>
+                <span class="fa fa-circle-thin fa-stack-2x"></span>
+              </a>
+            </td>
+            <td><span class="fa fa-check"></span></td>
+            <td>Memory</td>
+            <td>Sugarcult</td>
+            <td>Palm Trees and Power Lines</td>
+            <td class="secondary-info">2016-07-23</td>
+            <td class="secondary-info">3:54</td>
+          </tr>
+          <tr tabindex="1">
+            <td>
+              <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+                <span class="fa fa-play fa-stack-1x"></span>
+                <span class="fa fa-circle-thin fa-stack-2x"></span>
+              </a>
+            </td>
+            <td><span class="fa fa-check"></span></td>
+            <td>Memory</td>
+            <td>Sugarcult</td>
+            <td>Palm Trees and Power Lines</td>
+            <td class="secondary-info">2016-07-23</td>
+            <td class="secondary-info">3:54</td>
+          </tr>
+          <tr tabindex="1" class="active">
+            <td>
+              <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+                <span class="fa fa-play fa-stack-1x"></span>
+                <span class="fa fa-circle-thin fa-stack-2x"></span>
+              </a>
+            </td>
+            <td><span class="fa fa-check"></span></td>
+            <td>Memory</td>
+            <td>Sugarcult</td>
+            <td>Palm Trees and Power Lines</td>
+            <td class="secondary-info">2016-07-23</td>
+            <td class="secondary-info">3:54</td>
+          </tr>
+          <tr tabindex="1">
+            <td>
+              <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+                <span class="fa fa-play fa-stack-1x"></span>
+                <span class="fa fa-circle-thin fa-stack-2x"></span>
+              </a>
+            </td>
+            <td><span class="fa fa-check"></span></td>
+            <td>Memory</td>
+            <td>Sugarcult</td>
+            <td>Palm Trees and Power Lines</td>
+            <td class="secondary-info">2016-07-23</td>
+            <td class="secondary-info">3:54</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>
