@@ -46,7 +46,7 @@ public class ArtistsDAOImpl implements ArtistsDAO {
 	public int delete(Artists artists) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		//search the student eixts the id exists or not
+		//search the song eixts the id exists or not
 		Artists artist=	session.get(Artists.class, artists.getArtistname());
 	//check the std is null or null if null means no record
 	if(artist==null)
@@ -83,7 +83,7 @@ public class ArtistsDAOImpl implements ArtistsDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		//createCriteria the object provided by the  HiberNate
 			//we pass the class and we get the list of the object
-			//select * from student
+			
 	List<Artists> artists=currentSession.createCriteria(Artists.class).list();
 	return artists;
 	}

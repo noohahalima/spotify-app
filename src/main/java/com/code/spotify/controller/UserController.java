@@ -37,16 +37,13 @@ public class UserController {
 	@RequestMapping("/add")
 	public ModelAndView createUser()
 	{
-		//get the list of the Role
+		
 		Map<String, Object> model = new HashMap<String, Object>();
-		//for(Category category : categories)
-		//{
-		   // categoriesMap.put(category, category.getCategoryName());
-		//}
+		
 		model.put("user", new User());
 		return new ModelAndView("user-form",model);
 	}
-	@RequestMapping(value="/save",method=RequestMethod.POST)
+	@RequestMapping(value="save",method=RequestMethod.POST)
 	public ModelAndView userSave(@Valid @ModelAttribute("user")User user,BindingResult result)
 	{
 		//System.out.println("Email:"+user.getEmail());
@@ -58,7 +55,7 @@ public class UserController {
 			Map<String, Object> model = new HashMap<String, Object>();
 			
 			//model.put("user", new User());
-			return new ModelAndView("user-form",model);
+			return new ModelAndView("login",model);
 		}
 		else
 		{

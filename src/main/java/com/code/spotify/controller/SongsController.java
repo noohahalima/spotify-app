@@ -38,9 +38,9 @@ import com.code.spotify.service.SongsService;
 	public class SongsController {
 	//inject the songsService
 		@Autowired
-		private SongsService songsservice;
+		 SongsService songsservice;
 		@Autowired
-		private ArtistsService artistsservice;
+		 ArtistsService artistsservice;
 		@Autowired
 	    ServletContext servletContext;
 		
@@ -121,10 +121,14 @@ public String deletesongs(@PathVariable int id,Model model)
 }
 
 
+
+
 @RequestMapping(value="save",method=RequestMethod.POST)
-public ModelAndView SaveSong(@Valid @ModelAttribute("product") Songs songs  ,Model model,
+public ModelAndView SaveSong(@Valid @ModelAttribute("songs") Songs songs  ,Model model,
 		HttpServletRequest request,BindingResult result) throws Exception
 {
+	String artistid=request.getParameter("artistid");
+	List<Artists> artists=	artistsservice.getAll();
 	if(result.hasErrors())
 	{
 		System.out.println("error");

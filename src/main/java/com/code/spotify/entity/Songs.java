@@ -1,14 +1,19 @@
 package com.code.spotify.entity;
 
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -18,6 +23,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 
@@ -55,21 +61,45 @@ public class Songs {
 //	@ManyToMany
 //	@JoinColumn(name = "artistid")
 //	 List<Artists> artists;
+//	
+//	public List<Artists> getArtists() {
+//	return artists;
+//}
+//
+//public void setArtists(List<Artists> artists) {
+//	this.artists = artists;
+//}
+	
+	
+	
 	
 	@OneToOne
 	@JoinColumn(name="artistid")
 	Artists artists;
 	
 	
+	public Artists getArtists() {
+		return artists;
+	}
 
+	public void setArtists(Artists artists) {
+		this.artists = artists;
+	}
+
+
+
+	@Column(name="rating")
+	private int rating;
 	
-//	public List<Artists> getArtists() {
-//		return artists;
-//	}
-//
-//	public void setArtists(List<Artists> artists) {
-//		this.artists = artists;
-//	}
+	
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
 
 	public int getSongid() {
 		return songid;
@@ -117,13 +147,7 @@ public class Songs {
 
 	
 
-	public Artists getArtists() {
-		return artists;
-	}
-
-	public void setArtists(Artists artists) {
-		this.artists = artists;
-	}
+	
 
 	public Songs() {
 		

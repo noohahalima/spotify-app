@@ -68,9 +68,9 @@ public String songsForm(@ModelAttribute("artists") Artists artists)
 @RequestMapping("list")
 public String list(Model model)
 {
-	//get the list of the students from the service
+	//get the list of the songs from the service
 	List<Artists> artists=	artistsservice.getAll();
-	//we add the studentlist to the model
+	//we add the songslist to the model
 	model.addAttribute("artists",artists);
 	//retunr the view
 	return "artistslist";

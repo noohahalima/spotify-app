@@ -18,6 +18,9 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/assets/bootstrapless-star-rating/star-rating.css} "/>
 </head>
 <body style="background-color:#ddd;">
 <div class="container-fluid spotify-app">
@@ -43,14 +46,14 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
       <nav>
         <div class="top-nav container-fluid">
           <ul class="nav navbar-nav">
-            <li><a href="http://localhost:8081/spotify/songs/list">Home</a></li>
+            <li><a href="http://localhost:8081/spotify/">Home</a></li>
             <li class="active"><a href="http://localhost:8081/spotify/songs/list">Songs</a></li>
             <li><a href="http://localhost:8081/spotify/artists/list">Artists</a></li> 
           </ul>
         </div>
       </nav>
- <div class="topnav">
-            <a class="active" href="http://localhost:8081/spotify/songs/list">Home</a>
+ <%-- <div class="topnav">
+            <a class="active" href="http://localhost:8081/spotify/">Home</a>
             <a class="active" href="http://localhost:8081/spotify/songs/list">Songs</a>
             <a class="active" href="http://localhost:8081/spotify/artists/list">Artists</a>
             <div class="search-container">
@@ -59,7 +62,7 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             </div>
-        </div>
+        </div> --%>
         <div class="div1  mt-3 p3">
             <div class="header">
                 <a class="active" href='showform'>+ Add Song</a>
@@ -73,8 +76,8 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
 
 <table table table-songs border="0" cellspacing="10" cellpadding="10" mt-3 p3">
 <tr>
-<th >Name </th> <th class="col-sm-3"> Cover</th> <th class="col-sm-3"><span class="fa fa-calendar-o"> </span></th><th>Artist</th>
-
+<th >Name </th> <th class="col-sm-3"> Cover</th> <th class="col-sm-3"><span class="fa fa-calendar-o"> </span></th>
+<th>Artists</th><th>Rating</th><th></th>
 </tr>
 <!--  data row -->
 <c:forEach var="songs" items="${songs}">
@@ -82,8 +85,17 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
 <td> ${songs.songname}</td>
 <td><img class="img-rounded"  height="150" width="150" src="${songs.filename}" /></td>
 <td>${songs.dor}</td>
+<td>${songs.artists.artistname}</td>
+<td>
+<c:forEach begin="1" end="${songs.rating}" varStatus="loop">
+       <span class="glyphicon glyphicon-star"></span>
+   </c:forEach>
+   <c:forEach begin="${songs.rating}" end="4" varStatus="loop">
+       <span class="glyphicon glyphicon-star-empty"></span>
+   </c:forEach> ${songs.rating}.0 stars</div>
+</td>
 
- <td>${songs.artists.artistname}</td>
+
  
  
 <td>
@@ -92,10 +104,17 @@ display: inline-block;  font-size: 20px; margin: 10px 30px;   cursor: pointer;
         </a>
         </td>
 </tr>
+
+<tr>
+<td>
+</td>
+</tr>
 </c:forEach>
 </table>
 </div>
 </div>
     </div>
+    
 </body>
+
 </html>

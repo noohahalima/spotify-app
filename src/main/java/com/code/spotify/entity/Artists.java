@@ -1,10 +1,15 @@
 package com.code.spotify.entity;
 
-import java.util.*;
-import java.util.List;
+import java.util.Date;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,8 +18,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -37,13 +40,20 @@ public class Artists {
 	private String bio;
 	
 	@Column(name="dobb")
-	@NotEmpty(message="format yyy-MM-dd")
 	@DateTimeFormat(pattern="yyyy-MM-dd" )
 	private Date dobb;
 	
-//	@OneToOne
-//	 @JoinColumn(name="Songs")
-//	private Songs songs;
+	@OneToOne
+	 @JoinColumn(name="songid")
+	private Songs songs;
+	
+	public Songs getSongs() {
+		return songs;
+	}
+
+	public void setSongs(Songs songs) {
+		this.songs = songs;
+	}
 	
 //	@ManyToMany
 //	@JoinColumn(
@@ -51,21 +61,30 @@ public class Artists {
 //	)
 //	private List<Songs> songs;
 	
-	
+//	@ManyToMany(fetch = FetchType.LAZY,
+//		      cascade = {
+//		          CascadeType.PERSIST,
+//		          CascadeType.MERGE
+//		      },
+//		      mappedBy = "artists")
+//		 
+//		  private Set<Songs> songs = new HashSet<Songs>();
 
 	
+
+//	public Set<Songs> getSongs() {
+//		return songs;
+//	}
+//
+//	public void setSongs(Set<Songs> songs) {
+//		this.songs = songs;
+//	}
 
 	public int getArtistid() {
 		return artistid;
 	}
 
-//	public Songs getSongs() {
-//		return songs;
-//	}
-//
-//	public void setSongs(Songs songs) {
-//		this.songs = songs;
-//	}
+	
 
 	public void setArtistid(int artistid) {
 		this.artistid = artistid;
