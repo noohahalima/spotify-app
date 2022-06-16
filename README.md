@@ -2,7 +2,11 @@
 # spotify-app
 
 ## Tech Stack Used
-
+Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+          
 *Java 14
 *Spring Boot 2.5.0
 *Spring MVC
