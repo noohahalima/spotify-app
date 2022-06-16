@@ -2,16 +2,18 @@
 # spotify-app
 
 ## Tech Stack Used
-Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
+
           
 *Java 14
+
 *Spring Boot 2.5.0
+
 *Spring MVC
+
 *Hibernate 5.1
+
 *HTMl
+
 *Bootstrap 
 
 ![WhatsApp Image 2022-06-14 at 10 09 56 PM](https://user-images.githubusercontent.com/77339735/173977555-5ef42117-177c-46d2-a148-07d17291b1d5.jpeg)
